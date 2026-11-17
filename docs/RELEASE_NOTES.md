@@ -14,3 +14,5 @@ Then add it once: System Settings → Keyboard → Input Sources → Edit… →
 - Word suggestions (~65k words) that learn what you pick
 - Control+Shift+B toggles Bangla / English
 - Typing guide in the input menu
+
+**1.0.1:** `ch` now types ছ (`c` = চ; the old `chh` still works). Fixes the keyboard not receiving keystrokes in 1.0.0.
