@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Amader Bangla Keyboard</string>
+	<key>CFBundleName</key>
+	<string>Amader Bangla Keyboard</string>
+	<key>CFBundleExecutable</key>
+	<string>AmaderBanglaKeyboard</string>
+	<key>CFBundleIdentifier</key>
+	<string>io.github.amerganim.inputmethod.AmaderBanglaKeyboard</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>__VERSION__</string>
+	<key>CFBundleVersion</key>
+	<string>__VERSION__</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>11.0</string>
+	<key>LSBackgroundOnly</key>
+	<true/>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2026 amerganim. MIT License. Free software.</string>
+	<key>InputMethodConnectionName</key>
+	<string>AmaderBanglaKeyboard_Connection</string>
+	<key>InputMethodServerControllerClass</key>
+	<string>BKInputController</string>
+	<key>tsInputMethodIconFileKey</key>
+	<string>MenuIcon.tiff</string>
+	<key>tsInputMethodCharacterRepertoireKey</key>
+	<array>
+		<string>Beng</string>
+		<string>Latn</string>
+	</array>
+	<key>TISIntendedLanguage</key>
+	<string>bn</string>
+	<key>ComponentInputModeDict</key>
+	<dict>
+		<key>tsInputModeListKey</key>
+		<dict>
+			<key>io.github.amerganim.inputmethod.AmaderBanglaKeyboard.Bangla</key>
+			<dict>
+				<key>TISInputSourceID</key>
+				<string>io.github.amerganim.inputmethod.AmaderBanglaKeyboard.Bangla</string>
+				<key>TISIntendedLanguage</key>
+				<string>bn</string>
+				<key>tsInputModeScriptKey</key>
+				<string>smUnicode</string>
+				<key>tsInputModePrimaryInScriptKey</key>
+				<true/>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+				<key>tsInputModeIsVisibleKey</key>
+				<true/>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>MenuIcon.tiff</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>MenuIcon.tiff</string>
+				<key>tsInputModePaletteIconFileKey</key>
+				<string>MenuIcon.tiff</string>
+				<key>tsInputModeCharacterRepertoireKey</key>
+				<array>
+					<string>Beng</string>
+					<string>Latn</string>
+				</array>
+			</dict>
+		</dict>
+		<key>tsVisibleInputModeOrderedArrayKey</key>
+		<array>
+			<string>io.github.amerganim.inputmethod.AmaderBanglaKeyboard.Bangla</string>
+		</array>
+	</dict>
+</dict>
+</plist>

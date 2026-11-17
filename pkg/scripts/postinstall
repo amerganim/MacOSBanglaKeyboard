@@ -1,0 +1,15 @@
+#!/bin/bash
+# Runs after the .pkg copies the app to /Library/Input Methods.
+APP="/Library/Input Methods/AmaderBanglaKeyboard.app"
+EXE="$APP/Contents/MacOS/AmaderBanglaKeyboard"
+xattr -dr com.apple.quarantine "$APP" 2>/dev/null || true
+pkill -x AmaderBanglaKeyboard 2>/dev/null || true
+# Register/enable in the logged-in user's session (the installer runs as root).
+USER_NAME=$(/usr/bin/stat -f %Su /dev/console)
+if [ -n "$USER_NAME" ] && [ "$USER_NAME" != "root" ]; then
+  USER_ID=$(/usr/bin/id -u "$USER_NAME")
+  /bin/launchctl asuser "$USER_ID" /usr/bin/sudo -u "$USER_NAME" "$EXE" --enable || true
+  # macOS requires the user to add a third-party input source themselves.
+  /bin/launchctl asuser "$USER_ID" /usr/bin/sudo -u "$USER_NAME" /usr/bin/open "x-apple.systempreferences:com.apple.Keyboard-Settings.extension" || true
+fi
+exit 0

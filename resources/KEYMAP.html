@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amader Bangla Keyboard — Typing Guide</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    max-width: 880px; margin: 0 auto; padding: 24px 18px 64px;
+    line-height: 1.5; color: #1b1b1b; background: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #1e1e1e; }
+    th { background: #2d2d2d !important; }
+    td, th { border-color: #444 !important; }
+    code { background: #333 !important; }
+    .card { background: #262626 !important; border-color:#3a3a3a !important;}
+  }
+  h1 { font-size: 1.7rem; margin-bottom: .2em; }
+  h2 { margin-top: 1.6em; border-bottom: 2px solid #d0d0d0; padding-bottom: .2em; }
+  .sub { color: #666; margin-top: 0; }
+  .bn { font-size: 1.25rem; }
+  code { background: #ececec; padding: 1px 6px; border-radius: 4px;
+         font-family: Consolas, "Courier New", monospace; }
+  table { border-collapse: collapse; width: 100%; margin: .6em 0 1.2em; }
+  th, td { border: 1px solid #d0d0d0; padding: 6px 10px; text-align: center; }
+  th { background: #f0f0f0; }
+  .left { text-align: left; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+          gap: 8px; }
+  .card { border:1px solid #ddd; border-radius:8px; padding:10px; background:#fff; }
+  .card .bn { font-size: 1.5rem; }
+  .note { background: #fff7d6; border-left: 4px solid #e0c000; padding: 8px 12px;
+          border-radius: 4px; margin: 10px 0; }
+  @media (prefers-color-scheme: dark){ .note{ background:#3a3413; border-color:#9c8400; } }
+  kbd { background:#222; color:#fff; padding:1px 6px; border-radius:4px; font-size:.85em;}
+</style>
+</head>
+<body>
+
+<h1>Amader Bangla Keyboard — Typing Guide</h1>
+<p class="sub">Type romanized Bangla, then press <kbd>Space</kbd> to commit a word.
+Switch Bangla/English with <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>.</p>
+
+<div class="note">
+The scheme is <b>case-sensitive</b>: capitals are different letters
+(<code>t</code> = <span class="bn">ত</span> but <code>T</code> =
+<span class="bn">ট</span>).
+</div>
+
+<h2>Vowels</h2>
+<p>A vowel at the start of a word is an <b>independent vowel</b>; right after a
+consonant it becomes a <b>vowel sign (kar)</b> — shown on <span class="bn">ক</span> (<code>k</code>).</p>
+<table>
+<tr><th>Letter</th><th>Type</th><th>After consonant</th><th>Example</th></tr>
+<tr><td class="bn">অ</td><td><code>o</code></td><td>(inherent)</td><td><code>kol</code> → <span class="bn">কল</span></td></tr>
+<tr><td class="bn">আ</td><td><code>a</code></td><td class="bn">কা</td><td><code>kaj</code> → <span class="bn">কাজ</span></td></tr>
+<tr><td class="bn">ই</td><td><code>i</code></td><td class="bn">কি</td><td><code>din</code> → <span class="bn">দিন</span></td></tr>
+<tr><td class="bn">ঈ</td><td><code>I</code></td><td class="bn">কী</td><td><code>nodI</code> → <span class="bn">নদী</span></td></tr>
+<tr><td class="bn">উ</td><td><code>u</code></td><td class="bn">কু</td><td><code>tumi</code> → <span class="bn">তুমি</span></td></tr>
+<tr><td class="bn">ঊ</td><td><code>U</code></td><td class="bn">কূ</td><td><code>mUl</code> → <span class="bn">মূল</span></td></tr>
+<tr><td class="bn">ঋ</td><td><code>rri</code></td><td class="bn">কৃ</td><td><code>rriSi</code> → <span class="bn">ঋষি</span></td></tr>
+<tr><td class="bn">এ</td><td><code>e</code></td><td class="bn">কে</td><td><code>megh</code> → <span class="bn">মেঘ</span></td></tr>
+<tr><td class="bn">ঐ</td><td><code>OI</code></td><td class="bn">কৈ</td><td><code>OI</code> → <span class="bn">ঐ</span></td></tr>
+<tr><td class="bn">ও</td><td><code>O</code></td><td class="bn">কো</td><td><code>nOka</code> → <span class="bn">নোকা</span></td></tr>
+<tr><td class="bn">ঔ</td><td><code>OU</code></td><td class="bn">কৌ</td><td><code>nOUka</code> → <span class="bn">নৌকা</span></td></tr>
+</table>
+
+<h2>Consonants</h2>
+<table>
+<tr><th>Letter</th><th>Type</th><th>Letter</th><th>Type</th><th>Letter</th><th>Type</th></tr>
+<tr><td class="bn">ক</td><td><code>k</code></td><td class="bn">ট</td><td><code>T</code></td><td class="bn">প</td><td><code>p</code></td></tr>
+<tr><td class="bn">খ</td><td><code>kh</code></td><td class="bn">ঠ</td><td><code>Th</code></td><td class="bn">ফ</td><td><code>ph</code> / <code>f</code></td></tr>
+<tr><td class="bn">গ</td><td><code>g</code></td><td class="bn">ড</td><td><code>D</code></td><td class="bn">ব</td><td><code>b</code></td></tr>
+<tr><td class="bn">ঘ</td><td><code>gh</code></td><td class="bn">ঢ</td><td><code>Dh</code></td><td class="bn">ভ</td><td><code>bh</code> / <code>v</code></td></tr>
+<tr><td class="bn">ঙ</td><td><code>Ng</code></td><td class="bn">ণ</td><td><code>N</code></td><td class="bn">ম</td><td><code>m</code></td></tr>
+<tr><td class="bn">চ</td><td><code>ch</code></td><td class="bn">ত</td><td><code>t</code></td><td class="bn">য</td><td><code>z</code></td></tr>
+<tr><td class="bn">ছ</td><td><code>chh</code></td><td class="bn">থ</td><td><code>th</code></td><td class="bn">র</td><td><code>r</code></td></tr>
+<tr><td class="bn">জ</td><td><code>j</code></td><td class="bn">দ</td><td><code>d</code></td><td class="bn">ল</td><td><code>l</code></td></tr>
+<tr><td class="bn">ঝ</td><td><code>jh</code></td><td class="bn">ধ</td><td><code>dh</code></td><td class="bn">শ</td><td><code>sh</code></td></tr>
+<tr><td class="bn">ঞ</td><td><code>NG</code></td><td class="bn">ন</td><td><code>n</code></td><td class="bn">ষ</td><td><code>S</code> / <code>Sh</code></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="bn">স</td><td><code>s</code></td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="bn">হ</td><td><code>h</code></td></tr>
+</table>
+<p><b>Other forms:</b>
+<span class="bn">ড়</span> <code>R</code> &nbsp;·&nbsp;
+<span class="bn">ঢ়</span> <code>Rh</code> &nbsp;·&nbsp;
+<span class="bn">য়</span> <code>y</code> / <code>Y</code> (as in <code>noy</code> → <span class="bn">নয়</span>) &nbsp;·&nbsp;
+<span class="bn">ৎ</span> <code>t`</code> (khanda-ta) &nbsp;·&nbsp;
+<span class="bn">ব</span>-phola <code>w</code> (e.g. <code>swopno</code> → <span class="bn">স্বপ্ন</span>)
+</p>
+<div class="note"><code>j</code> = <span class="bn">জ</span> and <code>z</code> = <span class="bn">য</span> are <b>different</b> letters;
+<code>y</code> = <span class="bn">য়</span> is the semivowel.</div>
+
+<h2>Signs</h2>
+<table>
+<tr><th>Sign</th><th>Type</th><th>Name</th><th>Example</th></tr>
+<tr><td class="bn">ং</td><td><code>ng</code></td><td>anusvara</td><td><code>bangla</code> → <span class="bn">বাংলা</span></td></tr>
+<tr><td class="bn">ঁ</td><td><code>^</code></td><td>chandrabindu</td><td><code>cha^d</code> → <span class="bn">চাঁদ</span></td></tr>
+<tr><td class="bn">ঃ</td><td><code>:</code></td><td>visarga</td><td><code>du:kh</code> → <span class="bn">দুঃখ</span></td></tr>
+<tr><td class="bn">।</td><td><code>.</code></td><td>dari (full stop)</td><td><code>sheS.</code> → <span class="bn">শেষ।</span></td></tr>
+</table>
+<div class="note">In Bangla mode <code>.</code> always makes the dari
+(<span class="bn">।</span>). For a Western dot, switch to English
+(<kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>).</div>
+
+<h2>Digits</h2>
+<table>
+<tr><td class="bn">০</td><td class="bn">১</td><td class="bn">২</td><td class="bn">৩</td><td class="bn">৪</td><td class="bn">৫</td><td class="bn">৬</td><td class="bn">৭</td><td class="bn">৮</td><td class="bn">৯</td></tr>
+<tr><td><code>0</code></td><td><code>1</code></td><td><code>2</code></td><td><code>3</code></td><td><code>4</code></td><td><code>5</code></td><td><code>6</code></td><td><code>7</code></td><td><code>8</code></td><td><code>9</code></td></tr>
+</table>
+
+<h2>Conjuncts (যুক্তাক্ষর)</h2>
+<p>Type consonants <b>with no vowel between them</b>; they join automatically. A
+full searchable list of <b>every conjunct (297)</b> is <a href="#all-conjuncts">below</a>.</p>
+<div class="grid">
+  <div class="card"><span class="bn">ক্ক</span><br><code>kk</code></div>
+  <div class="card"><span class="bn">ক্ত</span><br><code>kt</code></div>
+  <div class="card"><span class="bn">ক্ষ</span><br><code>kSh</code></div>
+  <div class="card"><span class="bn">ন্দ</span><br><code>nd</code></div>
+  <div class="card"><span class="bn">স্ত</span><br><code>st</code></div>
+  <div class="card"><span class="bn">ষ্ট</span><br><code>ShT</code></div>
+  <div class="card"><span class="bn">শ্চ</span><br><code>shch</code></div>
+  <div class="card"><span class="bn">ন্ত</span><br><code>nt</code></div>
+</div>
+<p><b>ref</b> (<span class="bn">র্</span>) and <b>ya-phala</b>
+(<span class="bn">্য</span>) form automatically:
+<code>korm</code> → <span class="bn">কর্ম</span>,
+<code>dhormo</code> → <span class="bn">ধর্ম</span>,
+<code>bidza</code> → <span class="bn">বিদ্যা</span>,
+<code>nzay</code> → <span class="bn">ন্যায়</span>.
+To force a hasanta, type a backtick <code>`</code> (e.g. <code>r`k</code> →
+<span class="bn">র্ক</span>, <code>k`z</code> → <span class="bn">ক্য</span>).</p>
+
+<style>
+.jkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:4px;margin:.6em 0 1.4em}
+.jkgrid div{border:1px solid #ddd;border-radius:6px;padding:5px 3px;text-align:center;background:#fff}
+.jkgrid .bn{font-size:1.12rem}
+@media (prefers-color-scheme:dark){.jkgrid div{background:#262626;border-color:#3a3a3a}}
+</style>
+<h2 id="all-conjuncts">All conjuncts (যুক্তাক্ষর) — full list</h2>
+<p>Every conjunct from the standard Bangla conjunct lists, with the keys to type it (all verified against the engine). Press <kbd>⌘</kbd>+<kbd>F</kbd> to find one. The rule never changes: type the component consonants in order and the joiner (hasanta) is inserted automatically.</p>
+<div class="jkgrid">
+<div><span class="bn">ক্ক</span><br><code>kk</code></div>
+<div><span class="bn">ক্ট</span><br><code>kT</code></div>
+<div><span class="bn">ক্ট্র</span><br><code>kTr</code></div>
+<div><span class="bn">ক্ত</span><br><code>kt</code></div>
+<div><span class="bn">ক্ত্র</span><br><code>ktr</code></div>
+<div><span class="bn">ক্ন</span><br><code>kn</code></div>
+<div><span class="bn">ক্ব</span><br><code>kb</code></div>
+<div><span class="bn">ক্ম</span><br><code>km</code></div>
+<div><span class="bn">ক্য</span><br><code>kz</code></div>
+<div><span class="bn">ক্র</span><br><code>kr</code></div>
+<div><span class="bn">ক্ল</span><br><code>kl</code></div>
+<div><span class="bn">ক্ষ</span><br><code>kS</code></div>
+<div><span class="bn">ক্ষ্ণ</span><br><code>kSN</code></div>
+<div><span class="bn">ক্ষ্ব</span><br><code>kSb</code></div>
+<div><span class="bn">ক্ষ্ম</span><br><code>kSm</code></div>
+<div><span class="bn">ক্ষ্ম্য</span><br><code>kSmz</code></div>
+<div><span class="bn">ক্ষ্য</span><br><code>kSz</code></div>
+<div><span class="bn">ক্স</span><br><code>ks</code></div>
+<div><span class="bn">খ্য</span><br><code>khz</code></div>
+<div><span class="bn">খ্র</span><br><code>khr</code></div>
+<div><span class="bn">গ্ণ</span><br><code>gN</code></div>
+<div><span class="bn">গ্ধ</span><br><code>gdh</code></div>
+<div><span class="bn">গ্ধ্য</span><br><code>gdhz</code></div>
+<div><span class="bn">গ্ধ্র</span><br><code>gdhr</code></div>
+<div><span class="bn">গ্ন</span><br><code>gn</code></div>
+<div><span class="bn">গ্ন্য</span><br><code>gnz</code></div>
+<div><span class="bn">গ্ব</span><br><code>gb</code></div>
+<div><span class="bn">গ্ম</span><br><code>gm</code></div>
+<div><span class="bn">গ্য</span><br><code>gz</code></div>
+<div><span class="bn">গ্র</span><br><code>gr</code></div>
+<div><span class="bn">গ্র্য</span><br><code>grz</code></div>
+<div><span class="bn">গ্ল</span><br><code>gl</code></div>
+<div><span class="bn">ঘ্ন</span><br><code>ghn</code></div>
+<div><span class="bn">ঘ্য</span><br><code>ghz</code></div>
+<div><span class="bn">ঘ্র</span><br><code>ghr</code></div>
+<div><span class="bn">ঙ্ক</span><br><code>Ngk</code></div>
+<div><span class="bn">ঙ্ক্ত</span><br><code>Ngkt</code></div>
+<div><span class="bn">ঙ্ক্য</span><br><code>Ngkz</code></div>
+<div><span class="bn">ঙ্ক্ষ</span><br><code>NgkS</code></div>
+<div><span class="bn">ঙ্খ</span><br><code>Ngkh</code></div>
+<div><span class="bn">ঙ্খ্য</span><br><code>Ngkhz</code></div>
+<div><span class="bn">ঙ্গ</span><br><code>Ngg</code></div>
+<div><span class="bn">ঙ্গ্য</span><br><code>Nggz</code></div>
+<div><span class="bn">ঙ্ঘ</span><br><code>Nggh</code></div>
+<div><span class="bn">ঙ্ঘ্য</span><br><code>Ngghz</code></div>
+<div><span class="bn">ঙ্ঘ্র</span><br><code>Ngghr</code></div>
+<div><span class="bn">ঙ্ম</span><br><code>Ngm</code></div>
+<div><span class="bn">চ্চ</span><br><code>chch</code></div>
+<div><span class="bn">চ্ছ</span><br><code>chchh</code></div>
+<div><span class="bn">চ্ছ্ব</span><br><code>chchhb</code></div>
+<div><span class="bn">চ্ছ্র</span><br><code>chchhr</code></div>
+<div><span class="bn">চ্ঞ</span><br><code>chNG</code></div>
+<div><span class="bn">চ্ব</span><br><code>chb</code></div>
+<div><span class="bn">চ্য</span><br><code>chz</code></div>
+<div><span class="bn">জ্জ</span><br><code>jj</code></div>
+<div><span class="bn">জ্জ্ব</span><br><code>jjb</code></div>
+<div><span class="bn">জ্ঝ</span><br><code>jjh</code></div>
+<div><span class="bn">জ্ঞ</span><br><code>jNG</code></div>
+<div><span class="bn">জ্ব</span><br><code>jb</code></div>
+<div><span class="bn">জ্য</span><br><code>jz</code></div>
+<div><span class="bn">জ্র</span><br><code>jr</code></div>
+<div><span class="bn">ঞ্চ</span><br><code>NGch</code></div>
+<div><span class="bn">ঞ্ছ</span><br><code>NGchh</code></div>
+<div><span class="bn">ঞ্জ</span><br><code>NGj</code></div>
+<div><span class="bn">ঞ্ঝ</span><br><code>NGjh</code></div>
+<div><span class="bn">ট্ট</span><br><code>TT</code></div>
+<div><span class="bn">ট্ব</span><br><code>Tb</code></div>
+<div><span class="bn">ট্ম</span><br><code>Tm</code></div>
+<div><span class="bn">ট্য</span><br><code>Tz</code></div>
+<div><span class="bn">ট্র</span><br><code>Tr</code></div>
+<div><span class="bn">ড্ড</span><br><code>DD</code></div>
+<div><span class="bn">ড্ব</span><br><code>Db</code></div>
+<div><span class="bn">ড্ম</span><br><code>Dm</code></div>
+<div><span class="bn">ড্য</span><br><code>Dz</code></div>
+<div><span class="bn">ড্র</span><br><code>Dr</code></div>
+<div><span class="bn">ঢ্য</span><br><code>Dhz</code></div>
+<div><span class="bn">ঢ্র</span><br><code>Dhr</code></div>
+<div><span class="bn">ণ্ট</span><br><code>NT</code></div>
+<div><span class="bn">ণ্ঠ</span><br><code>NTh</code></div>
+<div><span class="bn">ণ্ঠ্য</span><br><code>NThz</code></div>
+<div><span class="bn">ণ্ড</span><br><code>ND</code></div>
+<div><span class="bn">ণ্ড্য</span><br><code>NDz</code></div>
+<div><span class="bn">ণ্ড্র</span><br><code>NDr</code></div>
+<div><span class="bn">ণ্ঢ</span><br><code>NDh</code></div>
+<div><span class="bn">ণ্ণ</span><br><code>NN</code></div>
+<div><span class="bn">ণ্ব</span><br><code>Nb</code></div>
+<div><span class="bn">ণ্ম</span><br><code>Nm</code></div>
+<div><span class="bn">ণ্য</span><br><code>Nz</code></div>
+<div><span class="bn">ত্ত</span><br><code>tt</code></div>
+<div><span class="bn">ত্ত্ব</span><br><code>ttb</code></div>
+<div><span class="bn">ত্ত্য</span><br><code>ttz</code></div>
+<div><span class="bn">ত্ত্র</span><br><code>ttr</code></div>
+<div><span class="bn">ত্থ</span><br><code>tth</code></div>
+<div><span class="bn">ত্ন</span><br><code>tn</code></div>
+<div><span class="bn">ত্ব</span><br><code>tb</code></div>
+<div><span class="bn">ত্ম</span><br><code>tm</code></div>
+<div><span class="bn">ত্ম্য</span><br><code>tmz</code></div>
+<div><span class="bn">ত্য</span><br><code>tz</code></div>
+<div><span class="bn">ত্র</span><br><code>tr</code></div>
+<div><span class="bn">ত্র্য</span><br><code>trz</code></div>
+<div><span class="bn">থ্ব</span><br><code>thb</code></div>
+<div><span class="bn">থ্য</span><br><code>thz</code></div>
+<div><span class="bn">থ্র</span><br><code>thr</code></div>
+<div><span class="bn">দ্গ</span><br><code>dg</code></div>
+<div><span class="bn">দ্ঘ</span><br><code>dgh</code></div>
+<div><span class="bn">দ্দ</span><br><code>dd</code></div>
+<div><span class="bn">দ্দ্ব</span><br><code>ddb</code></div>
+<div><span class="bn">দ্ধ</span><br><code>ddh</code></div>
+<div><span class="bn">দ্ব</span><br><code>db</code></div>
+<div><span class="bn">দ্ভ</span><br><code>dbh</code></div>
+<div><span class="bn">দ্ভ্র</span><br><code>dbhr</code></div>
+<div><span class="bn">দ্ম</span><br><code>dm</code></div>
+<div><span class="bn">দ্য</span><br><code>dz</code></div>
+<div><span class="bn">দ্র</span><br><code>dr</code></div>
+<div><span class="bn">দ্র্য</span><br><code>drz</code></div>
+<div><span class="bn">ধ্ন</span><br><code>dhn</code></div>
+<div><span class="bn">ধ্ব</span><br><code>dhb</code></div>
+<div><span class="bn">ধ্ম</span><br><code>dhm</code></div>
+<div><span class="bn">ধ্য</span><br><code>dhz</code></div>
+<div><span class="bn">ধ্র</span><br><code>dhr</code></div>
+<div><span class="bn">ন্ট</span><br><code>nT</code></div>
+<div><span class="bn">ন্ট্র</span><br><code>nTr</code></div>
+<div><span class="bn">ন্ঠ</span><br><code>nTh</code></div>
+<div><span class="bn">ন্ড</span><br><code>nD</code></div>
+<div><span class="bn">ন্ড্র</span><br><code>nDr</code></div>
+<div><span class="bn">ন্ত</span><br><code>nt</code></div>
+<div><span class="bn">ন্ত্ব</span><br><code>ntb</code></div>
+<div><span class="bn">ন্ত্য</span><br><code>ntz</code></div>
+<div><span class="bn">ন্ত্র</span><br><code>ntr</code></div>
+<div><span class="bn">ন্ত্র্য</span><br><code>ntrz</code></div>
+<div><span class="bn">ন্থ</span><br><code>nth</code></div>
+<div><span class="bn">ন্থ্র</span><br><code>nthr</code></div>
+<div><span class="bn">ন্দ</span><br><code>nd</code></div>
+<div><span class="bn">ন্দ্ব</span><br><code>ndb</code></div>
+<div><span class="bn">ন্দ্য</span><br><code>ndz</code></div>
+<div><span class="bn">ন্দ্র</span><br><code>ndr</code></div>
+<div><span class="bn">ন্ধ</span><br><code>ndh</code></div>
+<div><span class="bn">ন্ধ্য</span><br><code>ndhz</code></div>
+<div><span class="bn">ন্ধ্র</span><br><code>ndhr</code></div>
+<div><span class="bn">ন্ন</span><br><code>nn</code></div>
+<div><span class="bn">ন্ব</span><br><code>nb</code></div>
+<div><span class="bn">ন্ম</span><br><code>nm</code></div>
+<div><span class="bn">ন্য</span><br><code>nz</code></div>
+<div><span class="bn">প্ট</span><br><code>pT</code></div>
+<div><span class="bn">প্ত</span><br><code>pt</code></div>
+<div><span class="bn">প্ন</span><br><code>pn</code></div>
+<div><span class="bn">প্প</span><br><code>pp</code></div>
+<div><span class="bn">প্য</span><br><code>pz</code></div>
+<div><span class="bn">প্র</span><br><code>pr</code></div>
+<div><span class="bn">প্র্য</span><br><code>prz</code></div>
+<div><span class="bn">প্ল</span><br><code>pl</code></div>
+<div><span class="bn">প্স</span><br><code>ps</code></div>
+<div><span class="bn">ফ্র</span><br><code>phr</code></div>
+<div><span class="bn">ফ্ল</span><br><code>phl</code></div>
+<div><span class="bn">ব্জ</span><br><code>bj</code></div>
+<div><span class="bn">ব্দ</span><br><code>bd</code></div>
+<div><span class="bn">ব্ধ</span><br><code>bdh</code></div>
+<div><span class="bn">ব্ব</span><br><code>bb</code></div>
+<div><span class="bn">ব্য</span><br><code>bz</code></div>
+<div><span class="bn">ব্র</span><br><code>br</code></div>
+<div><span class="bn">ব্ল</span><br><code>bl</code></div>
+<div><span class="bn">ভ্ব</span><br><code>bhb</code></div>
+<div><span class="bn">ভ্য</span><br><code>bhz</code></div>
+<div><span class="bn">ভ্র</span><br><code>bhr</code></div>
+<div><span class="bn">ভ্ল</span><br><code>bhl</code></div>
+<div><span class="bn">ম্ন</span><br><code>mn</code></div>
+<div><span class="bn">ম্প</span><br><code>mp</code></div>
+<div><span class="bn">ম্প্র</span><br><code>mpr</code></div>
+<div><span class="bn">ম্ফ</span><br><code>mph</code></div>
+<div><span class="bn">ম্ব</span><br><code>mb</code></div>
+<div><span class="bn">ম্ব্র</span><br><code>mbr</code></div>
+<div><span class="bn">ম্ভ</span><br><code>mbh</code></div>
+<div><span class="bn">ম্ভ্র</span><br><code>mbhr</code></div>
+<div><span class="bn">ম্ম</span><br><code>mm</code></div>
+<div><span class="bn">ম্য</span><br><code>mz</code></div>
+<div><span class="bn">ম্র</span><br><code>mr</code></div>
+<div><span class="bn">ম্ল</span><br><code>ml</code></div>
+<div><span class="bn">য্য</span><br><code>zz</code></div>
+<div><span class="bn">র্ক</span><br><code>rk</code></div>
+<div><span class="bn">র্ক্য</span><br><code>rkz</code></div>
+<div><span class="bn">র্খ</span><br><code>rkh</code></div>
+<div><span class="bn">র্গ</span><br><code>rg</code></div>
+<div><span class="bn">র্গ্য</span><br><code>rgz</code></div>
+<div><span class="bn">র্গ্র</span><br><code>rgr</code></div>
+<div><span class="bn">র্ঘ</span><br><code>rgh</code></div>
+<div><span class="bn">র্ঘ্য</span><br><code>rghz</code></div>
+<div><span class="bn">র্ঙ্গ</span><br><code>rNgg</code></div>
+<div><span class="bn">র্চ</span><br><code>rch</code></div>
+<div><span class="bn">র্চ্য</span><br><code>rchz</code></div>
+<div><span class="bn">র্ছ</span><br><code>rchh</code></div>
+<div><span class="bn">র্জ</span><br><code>rj</code></div>
+<div><span class="bn">র্জ্জ</span><br><code>rjj</code></div>
+<div><span class="bn">র্জ্ঞ</span><br><code>rjNG</code></div>
+<div><span class="bn">র্জ্য</span><br><code>rjz</code></div>
+<div><span class="bn">র্ঝ</span><br><code>rjh</code></div>
+<div><span class="bn">র্ট</span><br><code>rT</code></div>
+<div><span class="bn">র্ড</span><br><code>rD</code></div>
+<div><span class="bn">র্ঢ্য</span><br><code>rDhz</code></div>
+<div><span class="bn">র্ণ</span><br><code>rN</code></div>
+<div><span class="bn">র্ণ্য</span><br><code>rNz</code></div>
+<div><span class="bn">র্ত</span><br><code>rt</code></div>
+<div><span class="bn">র্ত্ম</span><br><code>rtm</code></div>
+<div><span class="bn">র্ত্য</span><br><code>rtz</code></div>
+<div><span class="bn">র্ত্র</span><br><code>rtr</code></div>
+<div><span class="bn">র্থ</span><br><code>rth</code></div>
+<div><span class="bn">র্থ্য</span><br><code>rthz</code></div>
+<div><span class="bn">র্দ</span><br><code>rd</code></div>
+<div><span class="bn">র্দ্ব</span><br><code>rdb</code></div>
+<div><span class="bn">র্দ্র</span><br><code>rdr</code></div>
+<div><span class="bn">র্ধ</span><br><code>rdh</code></div>
+<div><span class="bn">র্ধ্ব</span><br><code>rdhb</code></div>
+<div><span class="bn">র্ন</span><br><code>rn</code></div>
+<div><span class="bn">র্প</span><br><code>rp</code></div>
+<div><span class="bn">র্ফ</span><br><code>rph</code></div>
+<div><span class="bn">র্ব</span><br><code>rb</code></div>
+<div><span class="bn">র্ব্য</span><br><code>rbz</code></div>
+<div><span class="bn">র্ভ</span><br><code>rbh</code></div>
+<div><span class="bn">র্ম</span><br><code>rm</code></div>
+<div><span class="bn">র্ম্য</span><br><code>rmz</code></div>
+<div><span class="bn">র্য</span><br><code>rz</code></div>
+<div><span class="bn">র্ল</span><br><code>rl</code></div>
+<div><span class="bn">র্শ</span><br><code>rsh</code></div>
+<div><span class="bn">র্শ্ব</span><br><code>rshb</code></div>
+<div><span class="bn">র্শ্য</span><br><code>rshz</code></div>
+<div><span class="bn">র্ষ</span><br><code>rS</code></div>
+<div><span class="bn">র্ষ্ট</span><br><code>rST</code></div>
+<div><span class="bn">র্ষ্ণ</span><br><code>rSN</code></div>
+<div><span class="bn">র্ষ্ণ্য</span><br><code>rSNz</code></div>
+<div><span class="bn">র্ষ্য</span><br><code>rSz</code></div>
+<div><span class="bn">র্স</span><br><code>rs</code></div>
+<div><span class="bn">র্হ</span><br><code>rh</code></div>
+<div><span class="bn">র্হ্য</span><br><code>rhz</code></div>
+<div><span class="bn">ল্ক</span><br><code>lk</code></div>
+<div><span class="bn">ল্ক্য</span><br><code>lkz</code></div>
+<div><span class="bn">ল্গ</span><br><code>lg</code></div>
+<div><span class="bn">ল্ট</span><br><code>lT</code></div>
+<div><span class="bn">ল্ড</span><br><code>lD</code></div>
+<div><span class="bn">ল্প</span><br><code>lp</code></div>
+<div><span class="bn">ল্ফ</span><br><code>lph</code></div>
+<div><span class="bn">ল্ব</span><br><code>lb</code></div>
+<div><span class="bn">ল্ভ</span><br><code>lbh</code></div>
+<div><span class="bn">ল্ম</span><br><code>lm</code></div>
+<div><span class="bn">ল্য</span><br><code>lz</code></div>
+<div><span class="bn">ল্ল</span><br><code>ll</code></div>
+<div><span class="bn">শ্চ</span><br><code>shch</code></div>
+<div><span class="bn">শ্ছ</span><br><code>shchh</code></div>
+<div><span class="bn">শ্ন</span><br><code>shn</code></div>
+<div><span class="bn">শ্ব</span><br><code>shb</code></div>
+<div><span class="bn">শ্ম</span><br><code>shm</code></div>
+<div><span class="bn">শ্য</span><br><code>shz</code></div>
+<div><span class="bn">শ্র</span><br><code>shr</code></div>
+<div><span class="bn">শ্ল</span><br><code>shl</code></div>
+<div><span class="bn">ষ্ক</span><br><code>Sk</code></div>
+<div><span class="bn">ষ্ক্ব</span><br><code>Skb</code></div>
+<div><span class="bn">ষ্ক্র</span><br><code>Skr</code></div>
+<div><span class="bn">ষ্ট</span><br><code>ST</code></div>
+<div><span class="bn">ষ্ট্য</span><br><code>STz</code></div>
+<div><span class="bn">ষ্ট্র</span><br><code>STr</code></div>
+<div><span class="bn">ষ্ঠ</span><br><code>STh</code></div>
+<div><span class="bn">ষ্ঠ্য</span><br><code>SThz</code></div>
+<div><span class="bn">ষ্ণ</span><br><code>SN</code></div>
+<div><span class="bn">ষ্ণ্ব</span><br><code>SNb</code></div>
+<div><span class="bn">ষ্প</span><br><code>Sp</code></div>
+<div><span class="bn">ষ্প্র</span><br><code>Spr</code></div>
+<div><span class="bn">ষ্ফ</span><br><code>Sph</code></div>
+<div><span class="bn">ষ্ব</span><br><code>Sb</code></div>
+<div><span class="bn">ষ্ম</span><br><code>Sm</code></div>
+<div><span class="bn">ষ্য</span><br><code>Sz</code></div>
+<div><span class="bn">স্ক</span><br><code>sk</code></div>
+<div><span class="bn">স্ক্র</span><br><code>skr</code></div>
+<div><span class="bn">স্খ</span><br><code>skh</code></div>
+<div><span class="bn">স্ট</span><br><code>sT</code></div>
+<div><span class="bn">স্ট্র</span><br><code>sTr</code></div>
+<div><span class="bn">স্ত</span><br><code>st</code></div>
+<div><span class="bn">স্ত্ব</span><br><code>stb</code></div>
+<div><span class="bn">স্ত্য</span><br><code>stz</code></div>
+<div><span class="bn">স্ত্র</span><br><code>str</code></div>
+<div><span class="bn">স্থ</span><br><code>sth</code></div>
+<div><span class="bn">স্থ্য</span><br><code>sthz</code></div>
+<div><span class="bn">স্ন</span><br><code>sn</code></div>
+<div><span class="bn">স্ন্য</span><br><code>snz</code></div>
+<div><span class="bn">স্প</span><br><code>sp</code></div>
+<div><span class="bn">স্প্র</span><br><code>spr</code></div>
+<div><span class="bn">স্প্ল</span><br><code>spl</code></div>
+<div><span class="bn">স্ফ</span><br><code>sph</code></div>
+<div><span class="bn">স্ব</span><br><code>sb</code></div>
+<div><span class="bn">স্ম</span><br><code>sm</code></div>
+<div><span class="bn">স্য</span><br><code>sz</code></div>
+<div><span class="bn">স্র</span><br><code>sr</code></div>
+<div><span class="bn">স্ল</span><br><code>sl</code></div>
+<div><span class="bn">হ্ণ</span><br><code>hN</code></div>
+<div><span class="bn">হ্ন</span><br><code>hn</code></div>
+<div><span class="bn">হ্ব</span><br><code>hb</code></div>
+<div><span class="bn">হ্ম</span><br><code>hm</code></div>
+<div><span class="bn">হ্য</span><br><code>hz</code></div>
+<div><span class="bn">হ্র</span><br><code>hr</code></div>
+<div><span class="bn">হ্ল</span><br><code>hl</code></div>
+</div>
+
+<h2>Examples</h2>
+<p class="bn left">
+<code>amar sOnar bangla</code> → আমার সোনার বাংলা<br>
+<code>tumi kemon achho</code> → তুমি কেমন আছ<br>
+<code>sundor prithibI</code> → সুন্দর পৃথিবী<br>
+<code>bishwas</code> → বিশ্বাস
+</p>
+
+<p style="color:#888;margin-top:2em;font-size:.9em">Amader Bangla Keyboard — typing guide.
+Switch input methods with <kbd>Win</kbd>+<kbd>Space</kbd>.</p>
+
+</body>
+</html>
