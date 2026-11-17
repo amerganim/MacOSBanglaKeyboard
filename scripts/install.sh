@@ -50,6 +50,14 @@ xattr -dr com.apple.quarantine "$DEST" 2>/dev/null || true
 say "Registering and enabling the input source"
 "$DEST/Contents/MacOS/$EXE" --enable || true
 
+if plutil -p "$HOME/Library/Preferences/com.apple.HIToolbox.plist" 2>/dev/null | grep -q AmaderBanglaKeyboard; then
+  # Upgrade: already in the user's input sources.
+  echo
+  echo "  ✅ Amader Bangla Keyboard is updated. Switch away and back to it (or log out/in) to load the new version."
+  echo
+  exit 0
+fi
+
 cat <<MSG
 
   ✅ Amader Bangla Keyboard is installed.

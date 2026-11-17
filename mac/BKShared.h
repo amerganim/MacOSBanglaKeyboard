@@ -10,7 +10,8 @@
 
 #define BK_BUNDLE_ID @"io.github.amerganim.inputmethod.AmaderBanglaKeyboard"
 #define BK_MODE_ID BK_BUNDLE_ID @".Bangla"
-#define BK_CONNECTION_NAME @"AmaderBanglaKeyboard_Connection"
+// macOS registers the mach service as "<bundle id>_Connection"; must match.
+#define BK_CONNECTION_NAME BK_BUNDLE_ID @"_Connection"
 
 namespace bk {
 

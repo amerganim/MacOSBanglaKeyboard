@@ -33,7 +33,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2026 amerganim. MIT License. Free software.</string>
 	<key>InputMethodConnectionName</key>
-	<string>AmaderBanglaKeyboard_Connection</string>
+	<string>io.github.amerganim.inputmethod.AmaderBanglaKeyboard_Connection</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>BKInputController</string>
 	<key>tsInputMethodIconFileKey</key>

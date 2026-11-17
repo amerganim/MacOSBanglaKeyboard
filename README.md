@@ -55,7 +55,7 @@ The scheme is **case-sensitive** (`t` = ত, `T` = ট). Type a word, then
 | `bangladesh` | বাংলাদেশ |
 | `kShoma` | ক্ষমা |
 | `sundor` | সুন্দর |
-| `cha^d` | চাঁদ |
+| `ca^d` | চাঁদ |
 | `du:kh` | দুঃখ |
 | `korm`, `bidza` | কর্ম, বিদ্যা |
 | `2026` | ২০২৬ |
