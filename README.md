@@ -10,6 +10,9 @@ Pages, Word, Safari, Chrome, Notes, Messages, Terminal, VS Code…
 
 **Free and open source (MIT).** No account, no ads, no tracking.
 
+🌐 **Website:** https://amerganim.github.io/MacOSBanglaKeyboard/ ·
+📖 **Typing guide:** https://amerganim.github.io/MacOSBanglaKeyboard/guide.html
+
 ## Install
 
 ### Option 1 — one command (recommended)
@@ -22,7 +25,13 @@ curl -fsSL https://raw.githubusercontent.com/amerganim/MacOSBanglaKeyboard/main/
 
 No admin password needed. It installs into `~/Library/Input Methods`.
 
-### Option 2 — installer package
+### Option 2 — Homebrew
+
+```bash
+brew install --cask amerganim/tap/amader-bangla-keyboard
+```
+
+### Option 3 — installer package
 
 Download `AmaderBanglaKeyboard-x.y.z.pkg` from the
 [latest release](https://github.com/amerganim/MacOSBanglaKeyboard/releases/latest)
@@ -31,7 +40,7 @@ and double-click it.
 > Because this free app is not signed with a paid Apple Developer certificate,
 > macOS will say it *"cannot verify the developer"*. Click **Done**, then open
 > **System Settings → Privacy & Security**, scroll down and click
-> **Open Anyway** next to the message about the package. (Option 1 avoids this.)
+> **Open Anyway** next to the message about the package. (Options 1 and 2 avoid this.)
 
 ### Last step — add it to your input sources (once)
 
@@ -88,7 +97,10 @@ make install    # install for your user
 make dist       # release zip + pkg in dist/
 ```
 
-Releases are built automatically by GitHub Actions when a `v*` tag is pushed.
+Releases are built automatically by GitHub Actions when a `v*` tag is pushed
+(`git tag v1.0.2 && git push origin v1.0.2`). After the release appears, run
+`./scripts/update-tap.sh 1.0.2` to update the Homebrew cask. The website in
+`site/` is deployed to GitHub Pages on every push to `main`.
 
 ## How it works
 
@@ -97,7 +109,8 @@ engine/     Portable C++17 phonetic engine (shared with the Windows version)
 mac/        InputMethodKit input method (Objective-C++)
 resources/  Word lists, typing guide, icons
 tests/      Engine unit tests + an end-to-end IME smoke test
-scripts/    install / uninstall / package
+scripts/    install / uninstall / package / update-tap
+site/       The website (GitHub Pages); guide.html is resources/KEYMAP.html
 ```
 
 `engine/` is copied unchanged from the Windows repository, so both keyboards
