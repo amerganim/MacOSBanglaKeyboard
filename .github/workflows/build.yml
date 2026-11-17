@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15-intel  # arm64 Mac runners are often queued for a long time; output is universal anyway
     steps:
       - uses: actions/checkout@v4
       - name: Engine tests
