@@ -14,15 +14,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f8f6; --surface: #ffffff; --text: #17201c; --muted: #5b6862;
-    --line: #dfe5e1; --green: #006a4e; --green-ink: #ffffff; --red: #f42a41;
-    --code-bg: #0f1a15; --code-text: #e7f3ec; --soft: #e8f3ee;
+    --bg: #f7f7fb; --surface: #ffffff; --text: #191a2e; --muted: #5d607a;
+    --line: #e2e3ef; --accent: #5b5bd6; --accent-ink: #ffffff; --red: #5b5bd6;
+    --code-bg: #15162a; --code-text: #e9e9fb; --soft: #ececfb;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0d1411; --surface: #141d19; --text: #e8efeb; --muted: #9aa9a1;
-      --line: #26332d; --green: #1f9b74; --green-ink: #ffffff; --soft: #17271f;
-      --code-bg: #050a08;
+      --bg: #0f1020; --surface: #171830; --text: #ebebf7; --muted: #a2a4c0;
+      --line: #2a2c4a; --accent: #8b8cf0; --accent-ink: #0f1020; --soft: #1f2040; --red: #8b8cf0;
+      --code-bg: #08091a;
     }
   }
   * { box-sizing: border-box; }
@@ -48,7 +48,7 @@
   .demo .arrow { color: var(--red); font-weight: 700; }
   .demo .out { font-family: "Hind Siliguri", sans-serif; font-size: 1.35rem; font-weight: 600; }
   .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
-  .badge { font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--soft); color: var(--green); font-weight: 600; }
+  .badge { font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--soft); color: var(--accent); font-weight: 600; }
   section { padding: 28px 0; }
   h2 { font-size: 1.5rem; margin: 0 0 6px; letter-spacing: -0.01em; }
   .sub { color: var(--muted); margin: 0 0 18px; }
@@ -56,7 +56,7 @@
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; min-width: 0; }
   .card h3 { margin: 0 0 4px; font-size: 1.1rem; }
   .card p { margin: 0 0 14px; color: var(--muted); font-size: .95rem; }
-  .pill { display: inline-block; font-size: .75rem; font-weight: 700; color: var(--green-ink); background: var(--green); border-radius: 6px; padding: 1px 8px; margin-left: 6px; vertical-align: middle; }
+  .pill { display: inline-block; font-size: .75rem; font-weight: 700; color: var(--accent-ink); background: var(--accent); border-radius: 6px; padding: 1px 8px; margin-left: 6px; vertical-align: middle; }
   .cmd {
     position: relative; background: var(--code-bg); color: var(--code-text);
     border-radius: 10px; padding: 14px 14px 14px 14px; font: .82rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -64,13 +64,13 @@
   }
   .copy {
     margin-top: 10px; border: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: .9rem;
-    background: var(--green); color: var(--green-ink); padding: 8px 14px; border-radius: 8px;
+    background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px;
   }
   .btn {
     display: inline-block; text-decoration: none; font-weight: 600;
-    background: var(--green); color: var(--green-ink); padding: 10px 16px; border-radius: 10px;
+    background: var(--accent); color: var(--accent-ink); padding: 10px 16px; border-radius: 10px;
   }
-  .btn.secondary { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+  .btn.secondary { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
   ol.steps { padding-left: 1.3em; margin: 0; }
   ol.steps li { margin: 6px 0; }
   kbd { font: .85em ui-monospace, Menlo, monospace; background: var(--soft); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 6px; }
@@ -81,7 +81,7 @@
   td.bn { font-size: 1.2rem; }
   .note { background: var(--soft); border-radius: 10px; padding: 12px 14px; color: var(--text); font-size: .95rem; }
   footer { padding: 36px 0 56px; color: var(--muted); font-size: .9rem; text-align: center; }
-  footer a, section a { color: var(--green); }
+  footer a, section a { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -159,7 +159,8 @@
 </main>
 
 <footer class="wrap">
-  <p>Also for Windows: <a href="https://github.com/amerganim/WindowsBanglaKeyboard">Amader Bangla Keyboard for Windows</a> ·
+  <p>Also for Windows: <a href="https://amerganim.github.io/WindowsBanglaKeyboard/">Amader Bangla Keyboard for Windows</a> ·
+  Android: <a href="https://github.com/amerganim/AndroidBanglaKeyboard">AndroidBanglaKeyboard</a> ·
   Source code: <a href="https://github.com/amerganim/MacOSBanglaKeyboard">GitHub</a> ·
   Uninstall: <a href="https://github.com/amerganim/MacOSBanglaKeyboard#uninstall">instructions</a></p>
   <p>MIT License · Word list derived from google/language-resources (CC BY 4.0)</p>

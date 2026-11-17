@@ -1,8 +1,11 @@
-// Renders the menu-bar icon (MenuIcon.tiff, 1x+2x) and the app icon
-// (AppIcon.icns) from the Bangla letter "অ". Run: swift scripts/make-icons.swift <outdir>
+// Renders the app icon (AppIcon.icns), the menu-bar icon (MenuIcon.tiff,
+// 1x+2x) and the website icon (site/icon.png) from resources/icon-source.png
+// — the same 512x512 icon used by the Android and Windows keyboards.
+//   swift scripts/make-icons.swift   (run from the repo root)
 import AppKit
 
-let out = CommandLine.arguments.count > 1 ? CommandLine.arguments[1] : "."
+let src = NSImage(contentsOfFile: "resources/icon-source.png")!
+let srcRep = NSBitmapImageRep(data: src.tiffRepresentation!)!
 let tmp = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("bk-icons-\(getpid())")
 try? FileManager.default.createDirectory(at: tmp, withIntermediateDirectories: true)
 
@@ -12,43 +15,49 @@ func png(_ size: Int, _ draw: (CGRect) -> Void) -> Data {
                              colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
   NSGraphicsContext.saveGraphicsState()
   NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
+  NSGraphicsContext.current!.imageInterpolation = .high
   draw(CGRect(x: 0, y: 0, width: size, height: size))
   NSGraphicsContext.restoreGraphicsState()
   return rep.representation(using: .png, properties: [:])!
 }
 
-func letter(_ r: CGRect, scale: CGFloat, color: NSColor) {
-  let font = NSFont(name: "Bangla Sangam MN", size: r.height * scale)
-    ?? NSFont(name: "Kohinoor Bangla", size: r.height * scale)
-    ?? NSFont.systemFont(ofSize: r.height * scale)
-  // Center the glyph's actual ink bounds (font metrics put Bangla glyphs high).
-  var ch: [UniChar] = Array("অ".utf16)
-  var g = [CGGlyph](repeating: 0, count: ch.count)
-  CTFontGetGlyphsForCharacters(font, &ch, &g, ch.count)
-  let b = CTFontGetBoundingRectsForGlyphs(font, .horizontal, &g, nil, 1)
-  let ctx = NSGraphicsContext.current!.cgContext
-  ctx.setFillColor(color.cgColor)
-  let path = CTFontCreatePathForGlyph(font, g[0], nil)!
-  ctx.saveGState()
-  ctx.translateBy(x: r.midX - b.midX, y: r.midY - b.midY)
-  ctx.addPath(path); ctx.fillPath()
-  ctx.restoreGState()
-}
-
-// Menu icon: black glyph on transparent (template-style), as large as fits.
-func menu(_ r: CGRect) {
-  letter(r, scale: 0.95, color: .black)
-}
-
-// App icon: white glyph on green/red Bangladesh-inspired tile.
+// macOS app icon: the artwork as a rounded square with the standard margin.
 func app(_ r: CGRect) {
-  let inset = r.insetBy(dx: r.width * 0.1, dy: r.width * 0.1)
-  let tile = NSBezierPath(roundedRect: inset, xRadius: r.width * 0.2, yRadius: r.width * 0.2)
-  NSColor(red: 0, green: 0.42, blue: 0.31, alpha: 1).setFill(); tile.fill()
-  let c = r.width * 0.2
-  NSColor(red: 0.96, green: 0.16, blue: 0.25, alpha: 1).setFill()
-  NSBezierPath(ovalIn: CGRect(x: inset.midX - c * 1.25, y: inset.midY - c * 1.25, width: 2.5 * c, height: 2.5 * c)).fill()
-  letter(inset, scale: 0.55, color: .white)
+  let inset = r.insetBy(dx: r.width * 0.098, dy: r.width * 0.098)
+  NSBezierPath(roundedRect: inset, xRadius: inset.width * 0.225, yRadius: inset.width * 0.225).addClip()
+  src.draw(in: inset)
+}
+
+// Menu-bar icon: just the keyboard glyph (the white parts), in black, so macOS
+// can tint it for light/dark menu bars. Crops to the glyph's bounding box.
+let glyphMask: NSImage = {
+  let w = srcRep.pixelsWide, h = srcRep.pixelsHigh
+  var minX = w, minY = h, maxX = 0, maxY = 0
+  let out = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: w, pixelsHigh: h, bitsPerSample: 8,
+                             samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
+                             colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+  for y in 0..<h { for x in 0..<w {
+    let c = srcRep.colorAt(x: x, y: y)!.usingColorSpace(.deviceRGB)!
+    // White keys vs. purple background: use the green channel as "whiteness".
+    let a = max(0, min(1, (c.greenComponent - 0.36) / (1 - 0.36)))
+    out.setColor(NSColor(deviceRed: 0, green: 0, blue: 0, alpha: a), atX: x, y: y)
+    if a > 0.5 { minX = min(minX, x); maxX = max(maxX, x); minY = min(minY, y); maxY = max(maxY, y) }
+  }}
+  let img = NSImage(size: NSSize(width: w, height: h)); img.addRepresentation(out)
+  let crop = NSImage(size: NSSize(width: maxX - minX + 1, height: maxY - minY + 1))
+  crop.lockFocus()
+  // NSBitmapImageRep y=0 is the top row; NSImage drawing is bottom-up.
+  img.draw(at: .zero, from: NSRect(x: minX, y: h - 1 - maxY, width: maxX - minX + 1, height: maxY - minY + 1),
+           operation: .copy, fraction: 1)
+  crop.unlockFocus()
+  return crop
+}()
+
+func menu(_ r: CGRect) {
+  let s = glyphMask.size
+  let scale = min(r.width / s.width, r.height / s.height) * 0.98
+  let w = s.width * scale, h = s.height * scale
+  glyphMask.draw(in: CGRect(x: r.midX - w / 2, y: r.midY - h / 2, width: w, height: h))
 }
 
 let m1 = tmp.appendingPathComponent("m1.png"), m2 = tmp.appendingPathComponent("m2.png")
@@ -60,17 +69,19 @@ for s in [16, 32, 128, 256, 512] {
   try png(s, app).write(to: iconset.appendingPathComponent("icon_\(s)x\(s).png"))
   try png(s * 2, app).write(to: iconset.appendingPathComponent("icon_\(s)x\(s)@2x.png"))
 }
+// Website favicon / header: rounded like the app icon.
+try png(256, app).write(to: URL(fileURLWithPath: "site/icon.png"))
 
 func run(_ args: [String]) {
   let p = Process(); p.executableURL = URL(fileURLWithPath: "/usr/bin/env"); p.arguments = args
+  p.standardOutput = FileHandle.nullDevice
   try! p.run(); p.waitUntilExit()
   if p.terminationStatus != 0 { fatalError("failed: \(args)") }
 }
-// 1x+2x TIFF: convert each PNG to TIFF, then combine.
 run(["sips", "-s", "format", "tiff", m1.path, "--out", tmp.appendingPathComponent("m1.tiff").path])
 run(["sips", "-s", "format", "tiff", m2.path, "--out", tmp.appendingPathComponent("m2.tiff").path])
 run(["tiffutil", "-cathidpicheck", tmp.appendingPathComponent("m1.tiff").path,
-     tmp.appendingPathComponent("m2.tiff").path, "-out", "\(out)/MenuIcon.tiff"])
-run(["iconutil", "-c", "icns", iconset.path, "-o", "\(out)/AppIcon.icns"])
+     tmp.appendingPathComponent("m2.tiff").path, "-out", "resources/MenuIcon.tiff"])
+run(["iconutil", "-c", "icns", iconset.path, "-o", "resources/AppIcon.icns"])
 try? FileManager.default.removeItem(at: tmp)
-print("wrote \(out)/MenuIcon.tiff and \(out)/AppIcon.icns")
+print("wrote resources/AppIcon.icns, resources/MenuIcon.tiff, site/icon.png")

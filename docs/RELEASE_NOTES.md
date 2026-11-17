@@ -15,4 +15,4 @@ Then add it once: System Settings → Keyboard → Input Sources → Edit… →
 - Control+Shift+B toggles Bangla / English
 - Typing guide in the input menu
 
-**1.0.2:** `ch` now types ছ (`c` = চ; the old `chh` still works). Fixes the keyboard not receiving keystrokes in 1.0.0.
+**1.0.3:** New icon (shared with the Android and Windows keyboards). **1.0.2:** `ch` now types ছ (`c` = চ; the old `chh` still works). Fixes the keyboard not receiving keystrokes in 1.0.0.

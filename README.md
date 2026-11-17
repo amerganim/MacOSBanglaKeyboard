@@ -1,10 +1,14 @@
+<p align="center"><img src="docs/icon-256.png" width="128" alt="Amader Bangla Keyboard"></p>
+
 # Amader Bangla Keyboard — macOS
 
 Type **Bangla phonetically** on your Mac: `amar sOnar bangla` → আমার সোনার বাংলা.
 
 This is the macOS version of
-[Amader Bangla Keyboard for Windows](https://github.com/amerganim/WindowsBanglaKeyboard),
-with the **same phonetic engine, same key map, same word suggestions**.
+[Amader Bangla Keyboard for Windows](https://github.com/amerganim/WindowsBanglaKeyboard)
+([website](https://amerganim.github.io/WindowsBanglaKeyboard/)) — also on
+[Android](https://github.com/amerganim/AndroidBanglaKeyboard) — with the
+**same phonetic engine, same key map, same word suggestions**.
 It is a native macOS input method (InputMethodKit), so it works in every app —
 Pages, Word, Safari, Chrome, Notes, Messages, Terminal, VS Code…
 
@@ -13,7 +17,7 @@ Pages, Word, Safari, Chrome, Notes, Messages, Terminal, VS Code…
 🌐 **Website:** https://amerganim.github.io/MacOSBanglaKeyboard/ ·
 📖 **Typing guide:** https://amerganim.github.io/MacOSBanglaKeyboard/guide.html
 
-## Install
+## How to get it (free)
 
 ### Option 1 — one command (recommended)
 

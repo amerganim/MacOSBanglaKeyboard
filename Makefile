@@ -64,7 +64,7 @@ dist: app
 	./scripts/package.sh "$(VERSION)"
 
 icons:
-	swift scripts/make-icons.swift resources
+	swift scripts/make-icons.swift
 
 clean:
 	rm -rf $(BUILD) dist
